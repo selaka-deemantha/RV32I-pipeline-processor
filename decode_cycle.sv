@@ -55,13 +55,22 @@ logic [31:0]            rd_d2;
 
 //internal signals for branch unit
 logic                   branch_out_d;
+logic [6:0]             opcode;
+logic [4:0]             rs1;
+logic [4:0]             rs2; 
+logic [4:0]             rd; 
+logic [2:0]             fun3;
+logic                   fun7;
 
-logic [4:0] rs1         = instr[19:15];
-logic [4:0] rs2         = instr[24:20];
-logic [4:0] rd          = instr[11:7];
-logic [6:0] opcode      = instr[6:0];
-logic [2:0] fun3        = instr[14:12];
-logic fun7              = instr[30];
+
+always_comb begin
+    opcode              = instr[6:0];
+    rs1                 = instr[19:15];
+    rs2                 = instr[24:20];
+    rd                  = instr[11:7];
+    fun3                = instr[14:12];
+    fun7                = instr[30];
+end
 
 
 

@@ -5,7 +5,10 @@ module fetch_cycle(
     pc_target,
     instr,
     pc,
-    pc_4
+    pc_4,
+
+    //test
+    pco_out
 );
 
 localparam INSTR_SIZE = 32;
@@ -18,13 +21,15 @@ input logic [INSTR_SIZE-1:0] pc_target;
 output logic [INSTR_SIZE-1:0] instr;
 output logic [INSTR_SIZE-1:0] pc;
 output logic [INSTR_SIZE-1:0] pc_4;
-
+output logic [31:0] pco_out;
  
 
 logic [31:0] pc_4_w;
 logic [31:0] pcf;
 logic [31:0] pco;
 logic [31:0] instro;
+
+assign pco_out = pco;
 
 
 mux_2 pc_mux(

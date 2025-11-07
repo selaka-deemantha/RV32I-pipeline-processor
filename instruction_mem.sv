@@ -24,9 +24,9 @@ initial begin
     mem[11]=32'h00200513;
 end
 	 
-always begin
+always_comb begin
 
-    instr_out <= mem[addr];
+    instr_out = mem[addr];
 
 end
 	 

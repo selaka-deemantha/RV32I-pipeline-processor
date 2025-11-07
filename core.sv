@@ -2,7 +2,8 @@ module core(
     input clk,
     input rst,
 
-    output logic [31:0] instr_t             // Instruction
+    output logic [31:0] instr_t,            // Instruction
+    output logic [31:0] pco_out            // Program counter output for testing
     // output logic [31:0] pc_f_d_t,            // Program counter from fetch to decode
     // output logic [31:0] pc_d_e_t,            // Program counter from decode to execute
     // output logic [31:0] pc4_f_d_t,           // PC+4 from fetch to decode
@@ -168,7 +169,10 @@ fetch_cycle fetch(
     .pc_target          (alu_out_e_f),
     .instr              (instr),
     .pc                 (pc_f_d),
-    .pc_4               (pc4_f_d)
+    .pc_4               (pc4_f_d),
+
+    //test
+    .pco_out            (pco_out)
 );
 
 decode_cycle decode(

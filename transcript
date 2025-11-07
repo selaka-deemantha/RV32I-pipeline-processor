@@ -1,201 +1,234 @@
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2024.3 linux_x86_64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
 # do run1.do
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog mux_4.sv 
-# -- Compiling module mux_4
-# 
-# Top level modules:
-# 	mux_4
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog mux_2.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:43 on Nov 08,2025
+# vlog -reportprogress 300 -sv mux_2.sv 
 # -- Compiling module mux_2
 # 
 # Top level modules:
 # 	mux_2
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog alu.sv 
-# -- Compiling module alu
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv mux_4.sv 
+# -- Compiling module mux_4
 # 
 # Top level modules:
-# 	alu
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# 	mux_4
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog data_mem.sv 
-# -- Compiling module data_mem
-# 
-# Top level modules:
-# 	data_mem
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog control_unit.sv 
-# -- Compiling module control_unit
-# 
-# Top level modules:
-# 	control_unit
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog reg_file.sv 
-# -- Compiling module reg_file
-# 
-# Top level modules:
-# 	reg_file
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog imm_generator.sv 
-# -- Compiling module imm_generator
-# 
-# Top level modules:
-# 	imm_generator
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog mux_8.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv mux_8.sv 
 # -- Compiling module mux_8
 # 
 # Top level modules:
 # 	mux_8
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog branch.sv 
-# -- Compiling module branch
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv alu.sv 
+# -- Compiling module alu
 # 
 # Top level modules:
-# 	branch
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# 	alu
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog program_counter.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv program_counter.sv 
 # -- Compiling module program_counter
 # 
 # Top level modules:
 # 	program_counter
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog instruction_mem.sv 
-# -- Compiling module instruction_mem
-# 
-# Top level modules:
-# 	instruction_mem
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog adder.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv adder.sv 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog control_decoder.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv reg_file.sv 
+# -- Compiling module reg_file
+# 
+# Top level modules:
+# 	reg_file
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv instruction_mem.sv 
+# -- Compiling module instruction_mem
+# 
+# Top level modules:
+# 	instruction_mem
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv data_mem.sv 
+# -- Compiling module data_mem
+# 
+# Top level modules:
+# 	data_mem
+# End time: 02:09:44 on Nov 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:44 on Nov 08,2025
+# vlog -reportprogress 300 -sv imm_generator.sv 
+# -- Compiling module imm_generator
+# 
+# Top level modules:
+# 	imm_generator
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv control_decoder.sv 
 # -- Compiling module control_decoder
 # 
 # Top level modules:
 # 	control_decoder
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog type_decoder.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv type_decoder.sv 
 # -- Compiling module type_decoder
 # 
 # Top level modules:
 # 	type_decoder
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog execution_cycle.sv 
-# -- Compiling module execution_cycle
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv control_unit.sv 
+# -- Compiling module control_unit
 # 
 # Top level modules:
-# 	execution_cycle
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# 	control_unit
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog mem_cycle.sv 
-# -- Compiling module mem_cycle
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv branch.sv 
+# -- Compiling module branch
 # 
 # Top level modules:
-# 	mem_cycle
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# 	branch
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog write_back_cycle.sv 
-# -- Compiling module write_back_cycle
-# 
-# Top level modules:
-# 	write_back_cycle
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog fetch_cycle.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv fetch_cycle.sv 
 # -- Compiling module fetch_cycle
 # 
 # Top level modules:
 # 	fetch_cycle
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog decode_cycle.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv decode_cycle.sv 
 # -- Compiling module decode_cycle
 # 
 # Top level modules:
 # 	decode_cycle
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:35:50 on Dec 17,2024
-# vlog core.sv 
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv execution_cycle.sv 
+# -- Compiling module execution_cycle
+# 
+# Top level modules:
+# 	execution_cycle
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv mem_cycle.sv 
+# -- Compiling module mem_cycle
+# 
+# Top level modules:
+# 	mem_cycle
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv write_back_cycle.sv 
+# -- Compiling module write_back_cycle
+# 
+# Top level modules:
+# 	write_back_cycle
+# End time: 02:09:45 on Nov 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:45 on Nov 08,2025
+# vlog -reportprogress 300 -sv core.sv 
 # -- Compiling module core
 # 
 # Top level modules:
 # 	core
-# End time: 13:35:50 on Dec 17,2024, Elapsed time: 0:00:00
+# End time: 02:09:46 on Nov 08,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vsim core -c -do "run -all; quit" 
-# Start time: 13:35:50 on Dec 17,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# //  Questa Intel Starter FPGA Edition-64
-# //  Version 2023.3 linux_x86_64 Jul 17 2023
-# //
-# //  Copyright 1991-2023 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  QuestaSim and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 02:09:46 on Nov 08,2025
+# vlog -reportprogress 300 -sv tb.sv 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 02:09:46 on Nov 08,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc=npr"" tb -wlf core_sim.wlf 
+# Start time: 02:09:46 on Nov 08,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
+# Loading work.tb(fast)
 # Loading work.core(fast)
-# run -all
+# Loading work.fetch_cycle(fast)
+# Loading work.mux_2(fast)
+# Loading work.program_counter(fast)
+# Loading work.instruction_mem(fast)
+# Loading work.adder(fast)
+# Loading work.decode_cycle(fast)
+# Loading work.control_unit(fast)
+# Loading work.type_decoder(fast)
+# Loading work.control_decoder(fast)
+# Loading work.reg_file(fast)
+# Loading work.imm_generator(fast)
+# Loading work.mux_8(fast)
+# Loading work.branch(fast)
+# Loading work.execution_cycle(fast)
+# Loading work.mux_4(fast)
+# Loading work.alu(fast)
+# Loading work.mem_cycle(fast)
+# Loading work.data_mem(fast)
+# Loading work.write_back_cycle(fast)
+# [20000] Reset released
+# End time: 02:11:43 on Nov 08,2025, Elapsed time: 0:01:57
+# Errors: 0, Warnings: 1
