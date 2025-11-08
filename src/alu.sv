@@ -15,7 +15,7 @@ module alu (a_i,b_i,op_i,res_o);
             res_o = a_i - b_i; //sub
         end
         else if (op_i==4'b0010) begin
-            res_o = a_i << b_i; //shift left logical
+            res_o = a_i << b_i[4:0]; //shift left logical
         end
         else if (op_i==4'b0011) begin
             res_o = $signed (a_i) < $signed (b_i); //shift less then
@@ -27,10 +27,10 @@ module alu (a_i,b_i,op_i,res_o);
             res_o = a_i ^ b_i; //xor
         end
         else if (op_i==4'b0110) begin
-            res_o = a_i >> b_i; //shift right logical
+            res_o = a_i >> b_i[4:0]; //shift right logical
         end
         else if (op_i==4'b0111) begin
-            res_o = a_i >>> b_i; //shift right arithematic
+            res_o = $signed (a_i) >>> b_i; //shift right arithematic
         end
         else if (op_i==4'b1000) begin
             res_o = a_i | b_i; //or

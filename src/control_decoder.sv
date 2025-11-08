@@ -90,32 +90,32 @@ always @(*) begin
     else if (i_type)begin //itype
         imm_sel = 3'b000; //i_type selection
         mem_to_reg = 2'b00;
-        if(fun3==3'b000 & fun7==0)begin
-            alu_control = 4'b0000;
+        if(fun3==3'b000)begin
+            alu_control = 4'b0000;              //addition
         end
         else if (fun3==3'b001 & fun7==0)begin
-            alu_control = 4'b0010;
+            alu_control = 4'b0010;              //shift left logical   
         end
-        else if (fun3==3'b010 & fun7==0)begin
-            alu_control = 4'b0011;
+        else if (fun3==3'b010)begin
+            alu_control = 4'b0011;              //set less than signed
         end
-        else if (fun3==3'b011 & fun7==0)begin
-            alu_control = 4'b0100;
+        else if (fun3==3'b011)begin
+            alu_control = 4'b0100;              //set less than unsigned
         end
-        else if (fun3==3'b100 & fun7==0)begin
-            alu_control = 4'b0101;
+        else if (fun3==3'b100)begin
+            alu_control = 4'b0101;              //xor
         end
         else if (fun3==3'b101 & fun7==0)begin
-            alu_control = 4'b0110;
+            alu_control = 4'b0110;              //shift right logical
         end
         else if (fun3==3'b101 & fun7==1)begin
-            alu_control = 4'b0111;
+            alu_control = 4'b0111;              //shift right arithmetic
         end
-        else if (fun3==3'b110 & fun7==0)begin
-            alu_control = 4'b1000;
+        else if (fun3==3'b110)begin
+            alu_control = 4'b1000;              //or
         end
-        else if (fun3==3'b111 & fun7==0)begin
-            alu_control = 4'b1001;
+        else if (fun3==3'b111)begin
+            alu_control = 4'b1001;              //and
         end
     end
     else if (store) begin //store
