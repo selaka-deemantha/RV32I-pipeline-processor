@@ -12,31 +12,33 @@ vlib work
 # Compile all modules
 # =====================================================
 # Utility modules
-vlog -sv mux_2.sv
-vlog -sv mux_4.sv
-vlog -sv mux_8.sv
-vlog -sv alu.sv
-vlog -sv program_counter.sv
-vlog -sv adder.sv
-vlog -sv reg_file.sv
-vlog -sv instruction_mem.sv
-vlog -sv data_mem.sv
-vlog -sv imm_generator.sv
-vlog -sv control_decoder.sv
-vlog -sv type_decoder.sv
-vlog -sv control_unit.sv
-vlog -sv branch.sv
+vlog -sv src/mux_2.sv
+vlog -sv src/mux_4.sv
+vlog -sv src/mux_8.sv
+vlog -sv src/alu.sv
+vlog -sv src/program_counter.sv
+vlog -sv src/adder.sv
+vlog -sv src/reg_file.sv
+vlog -sv src/instruction_mem.sv
+vlog -sv src/data_mem.sv
+vlog -sv src/imm_generator.sv
+vlog -sv src/control_decoder.sv
+vlog -sv src/type_decoder.sv
+vlog -sv src/control_unit.sv
+vlog -sv src/branch.sv
 
 # Pipeline stages
-vlog -sv fetch_cycle.sv
-vlog -sv decode_cycle.sv
-vlog -sv execution_cycle.sv
-vlog -sv mem_cycle.sv
-vlog -sv write_back_cycle.sv
+vlog -sv src/fetch_cycle.sv
+vlog -sv src/decode_cycle.sv
+vlog -sv src/execution_cycle.sv
+vlog -sv src/mem_cycle.sv
+vlog -sv src/write_back_cycle.sv
 
-# Top-level core and testbench
-vlog -sv core.sv
-vlog -sv tb.sv
+# Top-level core 
+vlog -sv src/core.sv
+
+#Testbenches
+vlog -sv tb/tb.sv
 
 # =====================================================
 # Launch simulation with waveform logging
