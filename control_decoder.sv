@@ -52,9 +52,7 @@ always @(*) begin
 	 //mem enable
     mem_en = store;
     
-    //selection for next address if any jump instrucion run
-    next_sel = jal | jalr ;
-    
+
 
     if(r_type)begin //rtype
         mem_to_reg = 2'b00;

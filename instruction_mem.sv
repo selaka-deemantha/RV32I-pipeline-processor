@@ -26,7 +26,7 @@ end
 	 
 always_comb begin
 
-    instr_out = mem[addr];
+    instr_out = mem[{2'b0,addr>>2}];
 
 end
 	 
