@@ -37,11 +37,12 @@ logic jump_o;
 fetch_cycle fetch(
     .clk                (clk),
     .rst                (rst),
-    .pc_src             (pc_src),////////////////////////
+    .pc_src             (pc_src),
     .pc_target          (alu_out_e_f),
     .instr              (instr),
     .pc                 (pc_f_d),
-    .pc_4               (pc4_f_d)
+    .pc_4               (pc4_f_d),
+    .stall              (0)
 );
 
 decode_cycle decode(
@@ -73,7 +74,8 @@ decode_cycle decode(
     .load_e             (load_d_e),
     .store_e            (store_d_e),
     .alu_ctrl_e         (alu_ctrl_d_e),
-    .jump_e             (jump_d_e)
+    .jump_e             (jump_d_e),
+    .bubble             (0)
 
 );
 

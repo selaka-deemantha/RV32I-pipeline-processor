@@ -32,7 +32,9 @@ module decode_cycle(
     output logic        load_e,
     output logic        store_e,
     output logic [3:0]  alu_ctrl_e,
-    output logic        jump_e
+    output logic        jump_e,
+
+    input logic         bubble
     
 
 );
@@ -169,35 +171,50 @@ always_ff @( posedge clk, posedge rst ) begin
     
     end
     else begin
+        if (bubble) begin
+            //insert a bubble in the pipeline by zeroing signals
+            branch_result_e <= 1'b0;
+            reg_write_e     <= 1'b0;
+            write_back_e    <= 2'b0;
+            op_a_sel_e      <= 1'b0;
+            op_b_sel_e      <= 1'b0;
+            load_e          <= 1'b0;
+            store_e         <= 1'b0;
+            alu_ctrl_e      <= 4'b0;
+            jump_e          <= 1'b0;
 
-        //control signals
-        branch_result_e <= branch_out_d;
-        reg_write_e     <= reg_write_d;
-        write_back_e    <= write_back_d;
-        op_a_sel_e      <= op_a_sel_d;
-        op_b_sel_e      <= op_b_sel_d;
-        load_e          <= load_d;
-        store_e         <= store_d;
-        alu_ctrl_e      <= alu_control_d;
-        jump_e          <= jump_d;
+            rd_e1           <= 32'b0;
+            rd_e2           <= 32'b0;
+            imm_e           <= 32'b0;   
+            pc_e            <= 32'b0;
+            pc4_e           <= 32'b0;
+            rs_e1           <= 5'b0;
+            rs_e2           <= 5'b0;
+            rd_e            <= 5'b0;    
+        end
+        else begin
+            //normal operation
+            branch_result_e <= branch_out_d;
+            reg_write_e     <= reg_write_d;
+            write_back_e    <= write_back_d;
+            op_a_sel_e      <= op_a_sel_d;
+            op_b_sel_e      <= op_b_sel_d;
+            load_e          <= load_d;
+            store_e         <= store_d;
+            alu_ctrl_e      <= alu_control_d;
+            jump_e          <= jump_d;
 
-        //
-
-        rd_e1           <= rd_d1;
-        rd_e2           <= rd_d2;
-        imm_e           <= imm_d;
-        pc_e            <= pc_d;
-        pc4_e           <= pc4_d;
-        rs_e1           <= rs1;
-        rs_e2           <= rs2;
-        rd_e            <= rd;
-
-
+            rd_e1           <= rd_d1;
+            rd_e2           <= rd_d2;
+            imm_e           <= imm_d;
+            pc_e            <= pc_d;
+            pc4_e           <= pc4_d;
+            rs_e1           <= rs1;
+            rs_e2           <= rs2;
+            rd_e            <= rd;
+        end
     end
 end
-
-
-
 
 
 endmodule

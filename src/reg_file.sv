@@ -37,7 +37,23 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
-assign op_a = (rs1 != 0) ? register[rs1] : 0;
-assign op_b = (rs2 != 0) ? register[rs2] : 0;
+always_comb begin
+    if(en && rs1 == rd && rs1 != 0) begin
+        op_a = data;
+    end
+    else begin
+        if (rs1 == 0) op_a = 32'b0; 
+        else op_a = register[rs1];
+    end
+    if(en && rs2 == rd && rs2 != 0) begin
+        op_b = data;
+    end
+    else begin
+        if (rs2 == 0) op_b = 32'b0;
+        else  op_b = register[rs2];
+    end
+end
+
+
 
 endmodule
