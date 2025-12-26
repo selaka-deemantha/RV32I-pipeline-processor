@@ -51,23 +51,21 @@ log -r /*
 add wave -position end sim:/tb/*
 add wave -position end sim:/tb/uut/fetch/*
 
-add wave -position end sim:/tb/uut/branch_out
-add wave -position end sim:/tb/uut/jump_o
+add wave -position end sim:/tb/uut/decode/*
+add wave -position end sim:/tb/uut/decode/reg_file/*
 
-add wave -position end sim:/tb/uut/decode/jump_e
-add wave -position end sim:/tb/uut/decode/jump_d
-add wave -position end sim:/tb/uut/decode/instr
-add wave -position end sim:/tb/uut/decode/opcode
-add wave -position end sim:/tb/uut/decode/control_unit/opcode
+add wave -position end sim:/tb/uut/decode/control_unit/u_typedec0/*
+add wave -position end sim:/tb/uut/decode/control_unit/u_controldec0/*
+
+add wave -position end sim:/tb/uut/execute/*
+
+add wave -position end sim:/tb/uut/mem/*
+
+add wave -position end sim:/tb/uut/write_back/*
 
 
 
-add wave -position end sim:/tb/uut/decode/control_unit/next_sel
-add wave -position end sim:/tb/uut/decode/control_unit/u_controldec0/jal
-add wave -position end sim:/tb/uut/decode/control_unit/u_controldec0/jalr
-add wave -position end sim:/tb/uut/decode/control_unit/u_typedec0/jal
-add wave -position end sim:/tb/uut/decode/control_unit/u_typedec0/jalr
-add wave -position end sim:/tb/uut/decode/control_unit/u_typedec0/opcode
+
 
 
 

@@ -1,7 +1,9 @@
 module execution_cycle(
     input logic         clk,
     input logic         rst,
-    //control sig
+
+    //control signals from decode stage
+
     input logic         reg_write_e,
     input logic [1:0]   write_back_e,
     input logic         branch_result_e,
@@ -12,13 +14,15 @@ module execution_cycle(
     input logic         store_e,
     input logic [3:0]   alu_ctrl_e,
 
-    input logic [1:0]   forward_AE,
-    input logic [1:0]   forward_BE,
-    input logic [4:0]   rd_e,
-    input logic [4:0]   rs_e1,
-    input logic [4:0]   rs_e2,
-    input logic [31:0]  rd_M,
-    input logic [31:0]  rd_W,
+    //data from decode stage
+
+    input logic [1:0]   forward_AE,     //from hazard unit
+    input logic [1:0]   forward_BE,     //from hazard unit
+    input logic [4:0]   rd_e,           //to the hazard unit
+    input logic [4:0]   rs_e1,          //to the hazard unit
+    input logic [4:0]   rs_e2,          //to the hazard unit
+    input logic [31:0]  rd_M,           //from memory stage
+    input logic [31:0]  rd_W,           //from write back stage
 
 
     input logic [31:0]  pc4_e,
@@ -27,21 +31,26 @@ module execution_cycle(
     input logic [31:0]  rd_e2,
     input logic [31:0]  imm_e,
 
-    output logic [31:0] alu_out_m, //
-    output logic [31:0] alu_out_e, //
-    output logic [31:0] op_b_m, //
+    output logic [31:0] alu_out_m, 
+    output logic [31:0] alu_out_e, 
+    output logic [31:0] op_b_m, 
     output logic [4:0]  rs_e1_o,
     output logic [4:0]  rs_e2_o,
     output logic [4:0]  rd_e_o,
-    output logic [4:0]  rd_m, //
-    output logic [31:0] pc4_m, //
+    output logic [4:0]  rd_m, 
+    output logic [31:0] pc4_m, 
+
     //control signal outputs
+
     output logic        jump_o,
-    output logic        branch_out, //
-    output logic        load_m, //
-    output logic        store_m, //
-    output logic        reg_write_m, //
-    output logic [1:0]  write_back_m //
+    output logic        branch_out,
+
+    //control signals to memory stage
+
+    output logic        load_m, 
+    output logic        store_m, 
+    output logic        reg_write_m, 
+    output logic [1:0]  write_back_m 
 
 
 );

@@ -6,7 +6,7 @@ module write_back_cycle(
     input logic [31:0] alu_out_w,
     input logic [31:0] mem_data_w,
     input logic [31:0] pc4_w,
-    input logic [4:0] rd_w,
+    input logic [4:0] rd_w,         //to the hazard unit
 
     output logic [31:0] write_back_result,
     output logic reg_write,

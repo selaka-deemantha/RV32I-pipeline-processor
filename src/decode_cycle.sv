@@ -4,9 +4,11 @@ module decode_cycle(
     input logic [31:0]  pc_d,
     input logic [31:0]  pc4_d,
     input logic [31:0]  instr,
-    input logic         reg_write, //control signal
-    input logic [4:0]   w_addr,
-    input logic [31:0]  w_data,
+    input logic         reg_write, //control signal from write back stage
+    input logic [4:0]   w_addr,    //write back address from write back stage
+    input logic [31:0]  w_data,    //write back data from write back stage
+
+    //data to execute stage
 
     output logic [31:0] rd_e1,
     output logic [31:0] rd_e2,
@@ -14,9 +16,13 @@ module decode_cycle(
     output logic [31:0] pc_e,
     output logic [31:0] pc4_e,
 
+    //Hazard unit signals
+
     output logic [4:0]  rs_e1,
     output logic [4:0]  rs_e2,
     output logic [4:0]  rd_e,
+
+    //control signals to execute stage
 
     output logic        branch_result_e,
     output logic        reg_write_e,
@@ -27,7 +33,6 @@ module decode_cycle(
     output logic        store_e,
     output logic [3:0]  alu_ctrl_e,
     output logic        jump_e
-    //output logic        branch_e
     
 
 );
@@ -79,17 +84,19 @@ control_unit control_unit(
     .opcode             (opcode),
     .fun3               (fun3),
     .fun7               (fun7),
-    .reg_write          (reg_write_d),
-    .imm_sel            (imm_sel),
-    .operand_b          (op_b_sel_d),
-    .operand_a          (op_a_sel_d),
-    .mem_to_reg         (write_back_d),
-    .Load               (load_d),
-    .Store              (store_d),
-    .Branch             (branch_d),
-    .mem_en             (mem_en_d),
-    .next_sel           (jump_d),
-    .alu_control        (alu_control_d)
+
+    //control signals
+    .reg_write          (reg_write_d),              //write back enable
+    .imm_sel            (imm_sel),                  //immediate select
+    .operand_b          (op_b_sel_d),               //ALU operand B select
+    .operand_a          (op_a_sel_d),               //ALU operand A select
+    .mem_to_reg         (write_back_d),             //write back data select
+    .Load               (load_d),                   //load enable
+    .Store              (store_d),                  //store enable
+    .Branch             (branch_d),                 //branch enable
+    .mem_en             (mem_en_d),                 //memory enable
+    .next_sel           (jump_d),                   //jump enable
+    .alu_control        (alu_control_d)             //ALU control signals
 
 );
 

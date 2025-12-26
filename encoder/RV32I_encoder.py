@@ -47,6 +47,7 @@ opcode_map = {
     "lui":      {"opcode":"0b0110111"}, 
 
     "auipc":    {"opcode":"0b0010111"}, 
-
 }
+
+
 

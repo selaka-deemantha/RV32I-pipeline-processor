@@ -8,13 +8,14 @@ module mem_cycle(
     input logic         load_m,
     input logic         store_m,
 
-
-    input logic [31:0]  alu_out_m,
-    input logic [31:0]  op_b_m,
+    //To write back mux
+    input logic [31:0]  alu_out_m,      //alu out and memory address
+    input logic [31:0]  op_b_m,         //memory write data
     input logic [31:0]  pc4_m,
-    input logic [4:0]  rd_m,
 
-    //output from pipe
+    //To hazard unit
+    input logic [4:0]   rd_m,
+
     //control signals
     output logic        reg_write_w,
     output logic [1:0]  write_back_w,
@@ -25,9 +26,9 @@ module mem_cycle(
     output logic [4:0]  rd_w,
 
     //non pipe outputs
-    output logic [4:0]  rd_m_addr,
-    output logic [31:0] rd_m_data,
-    output logic        rd_m_write_signal
+    output logic [4:0]  rd_m_addr,          //to the hazard unit
+    output logic [31:0] rd_m_data,          //to the execution stage for forwarding
+    output logic        rd_m_write_signal  //to the hazard unit 
 
 );
 

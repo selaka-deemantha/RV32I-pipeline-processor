@@ -1,73 +1,59 @@
-module fetch_cycle(
-    clk,
-    rst,
-    pc_src,
-    pc_target,
-    instr,
-    pc,
-    pc_4,
+module fetch_cycle #(
+    parameter INSTR_SIZE            = 32
+)(
 
-    //test
-    pco_out
+    input logic                     clk,
+    input logic                     rst,
+    input logic                     pc_src,
+    input logic [INSTR_SIZE-1:0]    pc_target,
+    output logic [INSTR_SIZE-1:0]   instr,
+    output logic [INSTR_SIZE-1:0]   pc,
+    output logic [INSTR_SIZE-1:0]   pc_4
 );
 
-localparam INSTR_SIZE = 32;
+logic [31:0]                        pc_4_w;
+logic [31:0]                        pcf;
+logic [31:0]                        pco;
+logic [31:0]                        instro;
 
-
-input logic clk;
-input logic rst;
-input logic pc_src;
-input logic [INSTR_SIZE-1:0] pc_target;
-output logic [INSTR_SIZE-1:0] instr;
-output logic [INSTR_SIZE-1:0] pc;
-output logic [INSTR_SIZE-1:0] pc_4;
-output logic [31:0] pco_out;
- 
-
-logic [31:0] pc_4_w;
-logic [31:0] pcf;
-logic [31:0] pco;
-logic [31:0] instro;
-
-assign pco_out = pco;
 
 
 mux_2 pc_mux(
-    .a(pc_4_w),
-    .b(pc_target),
-    .sel(pc_src),
-    .c(pcf)
+    .a                              (pc_4_w),
+    .b                              (pc_target),
+    .sel                            (pc_src),
+    .c                              (pcf)
 );
 
 program_counter program_counter(
-    .clk(clk),
-    .rst(rst),
-    .pc_next(pcf),
-    .pc(pco)
+    .clk                            (clk),
+    .rst                            (rst),
+    .pc_next                        (pcf),
+    .pc                             (pco)
 );
 
 instruction_mem imem(
-    .addr(pco),
-    .instr_out(instro)
+    .addr                           (pco),
+    .instr_out                      (instro)
 );
 
 adder pc_adder(
-    .a(pco),
-    .c(pc_4_w)
+    .a                              (pco),
+    .c                              (pc_4_w)
 );
 
 
 always_ff @(posedge clk, posedge rst) begin
     if(rst) begin
-        instr<=32'b0;
-        pc<=32'b0;
-        pc_4<=32'b0;
+        instr                       <=32'b0;
+        pc                          <=32'b0;
+        pc_4                        <=32'b0;
 
     end
     else begin
-        instr<=instro;
-        pc<=pco;
-        pc_4<=pc_4_w;
+        instr                       <=instro;
+        pc                          <=pco;
+        pc_4                        <=pc_4_w;
     end
 
 end

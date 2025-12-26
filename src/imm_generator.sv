@@ -1,18 +1,13 @@
 module imm_generator (
-    instr,
-    i_imme,
-    s_imme,
-    sb_imme,
-    uj_imme,
-    u_imme
+    input logic [31:0]      instr,
+    output logic [31:0]     i_imme,
+    output logic [31:0]     s_imme,
+    output logic [31:0]     sb_imme,
+    output logic [31:0]     uj_imme,
+    output logic [31:0]     u_imme
 );
 
-input logic [31:0]      instr;
-output logic [31:0]     i_imme;
-output logic [31:0]     s_imme;
-output logic [31:0]     sb_imme;
-output logic [31:0]     uj_imme;
-output logic [31:0]     u_imme;
+
 
 always_comb begin
     i_imme  = {{20{instr[31]}}, instr[31:20]};
