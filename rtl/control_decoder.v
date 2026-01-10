@@ -27,32 +27,22 @@ module control_decoder (
 always @(*) begin
     //reg write signal for register file
     reg_write = r_type | i_type | load | jal | jalr | lui | auipc;
-	 
     //operand a select for first input of alu
     operand_a = branch | jal | auipc;
-	 
     //operand b signal for second input of alu
     operand_b = i_type | load | store | branch | jal | jalr | lui | auipc;
-	 
     //load
     Load = load;
-	 
     //store
     Store = store;
-	 
-	 //branch
-    Branch =  branch;
-	 
-	 //selection for next address if any jump instrucion run
-    next_sel = jal | jalr ;
-	 
     // signal for write back data in register file either alu and data memory
     mem_to_reg = load;
-	 
-	 //mem enable
+    //branch
+    Branch =  branch;
+    //selection for next address if any jump instrucion run
+    next_sel = jal | jalr ;
+    //mem enable
     mem_en = store;
-    
-
 
     if(r_type)begin //rtype
         mem_to_reg = 2'b00;
@@ -90,32 +80,32 @@ always @(*) begin
     else if (i_type)begin //itype
         imm_sel = 3'b000; //i_type selection
         mem_to_reg = 2'b00;
-        if(fun3==3'b000)begin
-            alu_control = 4'b0000;              //addition
+        if(fun3==3'b000 & fun7==0)begin
+            alu_control = 4'b0000;
         end
         else if (fun3==3'b001 & fun7==0)begin
-            alu_control = 4'b0010;              //shift left logical   
+            alu_control = 4'b0010;
         end
-        else if (fun3==3'b010)begin
-            alu_control = 4'b0011;              //set less than signed
+        else if (fun3==3'b010 & fun7==0)begin
+            alu_control = 4'b0011;
         end
-        else if (fun3==3'b011)begin
-            alu_control = 4'b0100;              //set less than unsigned
+        else if (fun3==3'b011 & fun7==0)begin
+            alu_control = 4'b0100;
         end
-        else if (fun3==3'b100)begin
-            alu_control = 4'b0101;              //xor
+        else if (fun3==3'b100 & fun7==0)begin
+            alu_control = 4'b0101;
         end
         else if (fun3==3'b101 & fun7==0)begin
-            alu_control = 4'b0110;              //shift right logical
+            alu_control = 4'b0110;
         end
         else if (fun3==3'b101 & fun7==1)begin
-            alu_control = 4'b0111;              //shift right arithmetic
+            alu_control = 4'b0111;
         end
-        else if (fun3==3'b110)begin
-            alu_control = 4'b1000;              //or
+        else if (fun3==3'b110 & fun7==0)begin
+            alu_control = 4'b1000;
         end
-        else if (fun3==3'b111)begin
-            alu_control = 4'b1001;              //and
+        else if (fun3==3'b111 & fun7==0)begin
+            alu_control = 4'b1001;
         end
     end
     else if (store) begin //store
@@ -167,7 +157,7 @@ always @(*) begin
         imm_sel = 3'b011; //jal selection
     end
     if(jalr)begin
-        mem_to_reg = 2'b10;
+        mem_to_reg = 2'b00;
         alu_control = 4'b0000;
         imm_sel = 3'b000;//i_type selection
     end

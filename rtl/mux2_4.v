@@ -1,4 +1,4 @@
-module mux_4 (a,b,c,d,sel,out);
+module mux2_4 (a,b,c,d,sel,out);
     input wire [31:0] a,b,c,d;
     input wire [1:0] sel;
 
